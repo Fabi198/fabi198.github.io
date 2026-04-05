@@ -75,6 +75,7 @@
   display: flex;
   gap: 15px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
 .buttons a {
@@ -90,6 +91,28 @@
   background: #38bdf8;
   color: black;
 }
+
+.contact-container {
+  position: relative;
+  display: inline-block;
+}
+
+#emailBox {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  background: #1e293b;
+  border: 1px solid #38bdf8;
+  border-radius: 10px;
+  padding: 8px 15px;
+  
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  white-space: nowrap;
+}
   </style>
 </head>
 <body>
@@ -102,7 +125,15 @@
   </p>
 
   <div class="buttons">
-    <a href="#">Contáctame</a>
+    <div class="contact-container">
+        <a href="#" 
+           onclick="copyEmail(); return false;"
+           onmouseenter="showEmail()" 
+           onmouseleave="hideEmail()">
+          Contáctame
+        </a>
+      <div id="emailBox">fabianferrer42@gmail.com</div>
+    </div>
     <a href="#">GitHub</a>
     <a href="#">Descargar CV</a>
   </div>
@@ -139,6 +170,22 @@
   <p>Email: fabianferrer42@gmail.com</p>
   <p><a href="#">GitHub</a></p>
 </section>
+
+
+<script>
+  function copyEmail() {
+    const email = "fabianferrer42@gmail.com";
+    navigator.clipboard.writeText(email);
+  }
+
+  function showEmail() {
+    document.getElementById("emailBox").style.opacity = "1";
+  }
+
+  function hideEmail() {
+    document.getElementById("emailBox").style.opacity = "0";
+  }
+</script>
 
 </body>
 </html>
