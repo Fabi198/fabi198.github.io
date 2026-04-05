@@ -113,6 +113,31 @@
   transition: opacity 0.3s ease;
   white-space: nowrap;
 }
+
+#snackbar {
+  visibility: hidden;
+  min-width: 200px;
+  background-color: #1e293b;
+  color: #38bdf8;
+  text-align: center;
+  border-radius: 10px;
+  border: 1px solid #38bdf8;
+  padding: 12px;
+  
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+
+  opacity: 0;
+  transition: opacity 0.4s ease, bottom 0.4s ease;
+}
+
+#snackbar.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 50px;
+}
   </style>
 </head>
 <body>
@@ -171,11 +196,19 @@
   <p><a href="#">GitHub</a></p>
 </section>
 
+<div id="snackbar">Mail copiado</div>
 
 <script>
   function copyEmail() {
     const email = "fabianferrer42@gmail.com";
     navigator.clipboard.writeText(email);
+
+    const snackbar = document.getElementById("snackbar");
+    snackbar.classList.add("show");
+
+    setTimeout(() => {
+      snackbar.classList.remove("show");
+    }, 2000);
   }
 
   function showEmail() {
