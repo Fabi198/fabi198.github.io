@@ -3,8 +3,11 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background: #0f172a;
-      color: red;
+      color: white;
       padding-top: 70px;
+    }
+    body {
+      background: red;
     }
     * {
       box-sizing: border-box;
