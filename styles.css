@@ -124,14 +124,6 @@
     transform: scale(1.05);
 }
 
-/* Asegúrate de que el contenedor de texto esté centrado */
-.hero {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 #emailBox {
   position: absolute;
   top: 40px;
