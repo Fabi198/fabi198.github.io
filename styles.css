@@ -379,10 +379,9 @@ html {
     font-weight: 600;
 }
 
-.btn-primary { background-color: #00a8cc; color: #fff; }
-.btn-secondary { background-color: #e74c3c; color: #fff; }
+    .btn-primary { background-color: #00a8cc; color: #fff; }
+    .btn-secondary { background-color: #e74c3c; color: #fff; }
 
-.btn-primary:hover { background-color: #008eb0; }
-.btn-secondary:hover { background-color: #c0392b; }
-    
-  </style>
+    .btn-primary:hover { background-color: #008eb0; }
+    .btn-secondary:hover { background-color: #c0392b; }
+</style>
