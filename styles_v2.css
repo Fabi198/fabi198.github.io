@@ -87,7 +87,7 @@ body {
     align-items: center;
 
     text-align: center;
-    //background: linear-gradient(135deg, #0f172a, #1e293b);
+    /* background: linear-gradient(135deg, #0f172a, #1e293b); */
     padding: 20px;
 
     background: radial-gradient(white 1px, transparent 1px),
