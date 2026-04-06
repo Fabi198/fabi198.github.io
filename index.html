@@ -101,6 +101,40 @@
   display: inline-block;
 }
 
+/* Contenedor para centrar la imagen */
+.profile-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem; /* Espacio entre la foto y el texto */
+}
+
+.profile-img {
+    width: 180px;  /* Ajusta el tamaño según prefieras */
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%; /* Hace la imagen circular */
+    border: 4px solid #ffffff; /* Borde blanco sólido */
+    
+    /* Efecto de resplandor azul (Glow) */
+    box-shadow: 0 0 20px rgba(74, 181, 225, 0.6), 
+                0 0 40px rgba(74, 181, 225, 0.4);
+    
+    transition: transform 0.3s ease;
+}
+
+/* Efecto opcional al pasar el mouse */
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+/* Asegúrate de que el contenedor de texto esté centrado */
+.hero {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #emailBox {
   position: absolute;
   top: 40px;
@@ -376,6 +410,9 @@ html {
 
 
 <header id="inicio" class="hero">
+  <div class="profile-container">
+        <img src="tu-foto.jpg" alt="Fabián Ferrer" class="profile-img">
+    </div>
   <h1>¡Hola! Soy <span>Fabián Ferrer</span></h1>
   <h2>Desarrollador Android y Analista de Sistemas</h2>
   <p>
