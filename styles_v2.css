@@ -87,7 +87,6 @@ body {
     align-items: center;
     position: relative;
     text-align: center;
-    min-height: 100vh;
     background: 
         linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)),
         url("assets/Estrellas brillando en el espacio3.webp") center/cover no-repeat;
