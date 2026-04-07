@@ -85,7 +85,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
     text-align: center;
     background: 
         linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)),
