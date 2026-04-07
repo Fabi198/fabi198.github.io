@@ -24,6 +24,8 @@ body {
 .navbar {
     position: fixed;
     top: 0;
+    left: 50%;                 
+    transform: translateX(-50%);
     width: 90%;
     padding: 20px 10px;
     margin: 0 auto;
