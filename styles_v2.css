@@ -85,8 +85,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    position: relative;
     text-align: center;
+    min-height: 100vh;
     background: 
         linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)),
         url("assets/Estrellas brillando en el espacio3.webp") center/cover no-repeat;
@@ -128,7 +129,7 @@ body {
     height: 180px;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid #ffffff;
+    border: 4px solid #0d1117;
 
    /*
     box-shadow:
