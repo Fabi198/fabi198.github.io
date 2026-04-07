@@ -24,8 +24,8 @@ body {
 .navbar {
     position: fixed;
     top: 0;
-    width: 100%;
-    padding: 20px 5px;
+    width: 90%;
+    padding: 20px 10px;
 
     display: flex;
     justify-content: space-between;
@@ -48,9 +48,11 @@ body {
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 5px;
+    gap: 25px;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .nav-links a {
