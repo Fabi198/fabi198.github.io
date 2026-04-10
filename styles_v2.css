@@ -99,10 +99,15 @@ body {
 .hero h1 {
     font-size: 2.8em;
     margin: 0;
+    
+    
 }
 
 .hero h1 span {
     color: #38bdf8;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    
 }
 
 .hero h2 {
@@ -258,14 +263,12 @@ body {
 ========================= */
 .portfolio-section {
     width: 100%;
-    padding: 60px 20px;
     display: flex;
     justify-content: center;
 }
 
 .portfolio-container {
-    width: 100%;
-    max-width: 1200px;
+    width: 80%;
 }
 
 .portfolio-header {
@@ -292,7 +295,7 @@ body {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 65px;
 }
 
 .project-card {
@@ -332,13 +335,30 @@ body {
     margin-bottom: 15px;
 }
 
+.card-body a:link {
+    color: white;
+}
+
+.card-body a:visited {
+    color: white;
+}
+
+.card-body a:hover {
+    color: #38bdf8; /* cambia al pasar el mouse */
+}
+
+.card-body a:active {
+    color: #0ea5e9;
+}
+
 /* =========================
    PROJECT GALLERY GRID
 ========================= */
 .project-gallery {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
+    margin: 15px;
 }
 
 /* Imagen grande izquierda */
@@ -346,14 +366,14 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 /* Grilla derecha */
 .project-gallery .right {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 8px;
 }
 
 .project-gallery .right img {
@@ -377,16 +397,17 @@ body {
 .project-tags span {
     display: inline-block;
     font-size: 0.7rem;
-    padding: 3px 8px;
+    padding: 3px 15px;
     border: 1px solid #444;
     border-radius: 4px;
-    margin-right: 5px;
+    margin: 5px;
     color: #00a8cc;
 }
 
 .card-actions {
     display: flex;
     gap: 10px;
+    margin: 10px;
 }
 
 .card-actions a {
