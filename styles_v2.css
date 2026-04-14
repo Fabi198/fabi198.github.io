@@ -1,4 +1,4 @@
-```css
+css
 /* =========================
    RESET & BASE
 ========================= */
@@ -13,7 +13,7 @@ html {
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #0f172a;
+    /*background: #0f172a;*/
     color: white;
     padding-top: 70px;
 }
@@ -33,7 +33,7 @@ body {
     justify-content: space-between;
     align-items: center;
 
-    background: rgba(15, 23, 42, 0.8);
+    /*background: rgba(15, 23, 42, 0.8);*/
     backdrop-filter: blur(10px);
 
     z-index: 1000;
@@ -90,9 +90,9 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: 
+    /*background: 
         linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)),
-        url("assets/Estrellas brillando en el espacio3.webp") center/cover no-repeat;
+        url("assets/Estrellas brillando en el espacio3.webp") center/cover no-repeat;*/
     padding: 20px;
 }
 
@@ -466,4 +466,18 @@ body {
         grid-template-columns: 1fr;
     }
 }
-```
+
+/* =========================
+   FONDO DE ESTRELLAS
+========================= */
+#starfield {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  background: #030a18;
+}
+
