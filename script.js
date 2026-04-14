@@ -70,3 +70,106 @@ window.addEventListener("resize", () => {
   resize();
   createStars();
 });
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+
+let currentImages = [];
+let currentIndex = 0;
+
+// click en cualquier imagen
+console.log(document.querySelectorAll(".project-gallery img"));
+document.querySelectorAll(".project-gallery img").forEach((img) => {
+  img.addEventListener("click", () => {
+    console.log("CLICK DETECTADO");
+    const gallery = img.closest(".project-gallery");
+
+    // agarrar lista completa
+    currentImages = JSON.parse(gallery.dataset.gallery);
+
+    // encontrar índice correcto
+    currentIndex = currentImages.findIndex(src =>
+      img.src.includes(src)
+    );
+
+    // fallback por si falla
+    if (currentIndex === -1) currentIndex = 0;
+
+    openLightbox();
+  });
+});
+
+function openLightbox() {
+  updateImage();
+  lightbox.style.display = "flex";
+}
+
+function updateImage() {
+  lightboxImg.src = currentImages[currentIndex];
+}
+
+// navegación circular
+document.getElementById("next").onclick = () => {
+  currentIndex = (currentIndex + 1) % currentImages.length;
+  updateImage();
+};
+
+document.getElementById("prev").onclick = () => {
+  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+  updateImage();
+};
+
+let startX = 0;
+
+lightbox.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+});
+
+lightbox.addEventListener("touchend", (e) => {
+  let endX = e.changedTouches[0].clientX;
+
+  if (startX - endX > 50) {
+    document.getElementById("next").click();
+  }
+
+  if (endX - startX > 50) {
+    document.getElementById("prev").click();
+  }
+});
+
+document.querySelector(".close").onclick = () => {
+  lightbox.style.display = "none";
+};
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = "none";
+  }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    lightbox.style.display = "none";
+  }
+});
+
+document.addEventListener("keydown", (e) => {
+
+  // solo si el lightbox está abierto
+  if (lightbox.style.display !== "flex") return;
+
+  if (e.key === "ArrowRight") {
+    currentIndex = (currentIndex + 1) % currentImages.length;
+    updateImage();
+  }
+
+  if (e.key === "ArrowLeft") {
+    currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+    updateImage();
+  }
+
+  if (e.key === "Escape") {
+    lightbox.style.display = "none";
+  }
+
+});
