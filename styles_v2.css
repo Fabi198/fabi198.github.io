@@ -1,4 +1,5 @@
 css
+
 /* =========================
    RESET & BASE
 ========================= */
@@ -24,7 +25,7 @@ body {
 .navbar {
     position: fixed;
     top: 0;
-    left: 50%;                 
+    left: 50%;
     transform: translateX(-50%);
     width: 90%;
     padding: 20px 10px;
@@ -99,15 +100,15 @@ body {
 .hero h1 {
     font-size: 2.8em;
     margin: 0;
-    
-    
+
+
 }
 
 .hero h1 span {
     color: #38bdf8;
     font-family: 'Montserrat', sans-serif;
     font-weight: bolder;
-    
+
 }
 
 .hero h2 {
@@ -138,7 +139,7 @@ body {
     border-radius: 50%;
     border: 4px solid #0d1117;
 
-   /*
+    /*
     box-shadow:
         0 0 20px rgba(74, 181, 225, 0.6),
         0 0 40px rgba(74, 181, 225, 0.4);
@@ -248,10 +249,13 @@ body {
 }
 
 @keyframes bounce {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translate(-50%, 0);
         opacity: 0.7;
     }
+
     50% {
         transform: translate(-50%, 10px);
         opacity: 1;
@@ -345,7 +349,8 @@ body {
 }
 
 .card-body a:hover {
-    color: #38bdf8; /* cambia al pasar el mouse */
+    color: #38bdf8;
+    /* cambia al pasar el mouse */
 }
 
 .card-body a:active {
@@ -424,11 +429,19 @@ body {
 .btn-primary {
     background-color: #00a8cc;
     color: #fff;
+    box-shadow:
+        inset 0 1px 2px rgba(248, 248, 248, 0.1),
+        /* luz arriba */
+        0 10px 25px rgba(97, 69, 69, 0.4);
 }
 
 .btn-secondary {
     background-color: #e74c3c;
     color: #fff;
+    box-shadow:
+        inset 0 1px 2px rgba(248, 248, 248, 0.1),
+        /* luz arriba */
+        0 10px 25px rgba(88, 86, 86, 0.4);
 }
 
 .btn-primary:hover {
@@ -472,14 +485,14 @@ body {
    FONDO DE ESTRELLAS
 ========================= */
 #starfield {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-  background: #030a18;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    background: #030a18;
 }
 
 /* =========================
@@ -487,99 +500,105 @@ body {
 ========================= */
 
 #thumbnails {
-  position: absolute;
-  bottom: 20px;
-  display: flex;
-  gap: 10px;
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    gap: 10px;
 }
 
 .thumb-mini {
-  width: 80px;
-  cursor: pointer;
-  opacity: 0.6;
+    width: 80px;
+    cursor: pointer;
+    opacity: 0.6;
 }
 
 .thumb-mini:hover {
-  opacity: 1;
+    opacity: 1;
 }
 
 .lightbox {
-  position: fixed; 
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 
-  background: rgba(0,0,0,0.9);
+    background: rgba(0, 0, 0, 0.9);
 
-  display: none;
-  justify-content: center;
-  align-items: center;
+    display: none;
+    justify-content: center;
+    align-items: center;
 
-  z-index: 9999; 
+    z-index: 9999;
 }
 
 .lightbox-content {
-  position: relative;
-  max-width: 90%;
-  max-height: 90%;
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
 }
 
 .lightbox.show {
-  display: flex;
-  opacity: 1;
+    display: flex;
+    opacity: 1;
 }
 
 .lightbox img {
-  position: relative;
-  transform: scale(1);
-  transition: transform 0.3s ease;
+    position: relative;
+    transform: scale(1);
+    transition: transform 0.3s ease;
 }
 
 #lightbox-img {
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
 
-  max-height: 80vh;
-  object-fit: contain;
+    max-height: 80vh;
+    object-fit: contain;
 
-  display: block;
+    display: block;
 }
 
 .lightbox.show img {
-  transform: scale(1);
+    transform: scale(1);
 }
 
 .close {
-  position: fixed;
-  top: 10%;
-  right: 38%;
-  font-size: 2rem;
-  color: white;
-  cursor: pointer;
+    position: fixed;
+    top: 10%;
+    right: 38%;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
 }
 
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.prev { left: -50px; }
-.next { right: -50px; }
+.prev {
+    left: -50px;
+}
+
+.next {
+    right: -50px;
+}
 
 .controls {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
 }
 
 .controls button {
-  background: rgba(255,255,255,0.1);
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
 }
 
 /* =========================
@@ -587,12 +606,154 @@ body {
 ========================= */
 
 .title-project {
-  display: flex;
-  align-items: center; 
-  gap: 20px;           
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .title-project img {
-  width: 72px; 
-  height: 72px;
+    width: 72px;
+    height: 72px;
+}
+
+
+/* =========================
+   SECCION STACK
+========================= */
+
+.stack {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.stack h1 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+/* GRID PRINCIPAL */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(320px, 1fr));
+    gap: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    justify-content: center;
+}
+
+/* BLOQUES */
+.group {
+    border-radius: 20px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+    /* sombra abajo */
+}
+
+
+
+.group:nth-child(1),
+.group:nth-child(3) {
+    background: rgb(0, 141, 176);
+}
+
+.group:nth-child(2),
+.group:nth-child(4) {
+    background: rgb(231, 77, 60);
+}
+
+.group:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.group h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ITEMS GRID */
+.items {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 12px;
+}
+
+/* TARJETAS */
+.item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(8, 8, 8, 0.308);
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 4px;
+    border-color: #030a18;
+    transition: 0.25s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-size: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.1),
+        /* luz arriba */
+        0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.item i {
+    font-size: 18px;
+}
+
+/* HOVER */
+.item:hover {
+    transform: scale(1.05);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+/* EFECTO LUZ */
+.item::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.4s;
+}
+
+.item:hover::after {
+    width: 100%;
+}
+
+.icon-box img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+/* Caja del icono */
+.icon-box {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  box-shadow: 
+    0 2px 6px rgba(0,0,0,0.3),
+    inset 0 1px 0 rgba(255,255,255,0.15);
+
+  flex-shrink: 0;
 }
