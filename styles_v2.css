@@ -426,6 +426,10 @@ body {
     font-weight: 600;
 }
 
+.card-actions a:hover {
+    color: #252626;
+}
+
 .btn-primary {
     background-color: #00a8cc;
     color: #fff;
@@ -446,10 +450,16 @@ body {
 
 .btn-primary:hover {
     background-color: #008eb0;
+    color: #fff;
+    transform: scale(1.03);
+    transition: transform 0.2s ease;
 }
 
 .btn-secondary:hover {
     background-color: #c0392b;
+    color: #fff;
+    transform: scale(1.03);
+    transition: transform 0.2s ease;
 }
 
 /* =========================
@@ -665,7 +675,7 @@ body {
     margin-bottom: 4px;
     border-color: #030a18;
     transition: 0.25s;
-    cursor: pointer;
+    cursor: default;
     position: relative;
     overflow: hidden;
     font-size: 20px;
