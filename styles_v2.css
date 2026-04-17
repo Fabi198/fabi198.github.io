@@ -734,13 +734,11 @@ body {
    RESPONSIVE
 ========================= */
 
-@media (max-width: 900px) {
-    .scroll-indicator {
-        opacity: 0;
-    }
+@media (hover: none) {
+  .scroll-indicator {
+    display: none;
+  }
 }
-
-
 
 @media (max-width: 900px) {
     .projects-grid {
