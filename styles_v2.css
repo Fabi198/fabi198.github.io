@@ -733,6 +733,15 @@ body {
 /* =========================
    RESPONSIVE
 ========================= */
+
+@media (max-width: 900px) {
+    .scroll-indicator {
+        opacity: 0;
+    }
+}
+
+
+
 @media (max-width: 900px) {
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
