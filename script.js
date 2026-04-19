@@ -173,3 +173,205 @@ document.addEventListener("keydown", (e) => {
   }
 
 });
+
+const section = document.querySelector("#training");
+
+const main = document.querySelector(".main");
+
+const nodes = [
+  { el: document.querySelector(".start"), progress: 0 },
+  { el: document.querySelector(".n1"), progress: 0.31 },
+  { el: document.querySelector(".n2"), progress: 0.51 },
+  { el: document.querySelector(".n3"), progress: 0.69 },
+  { el: null, progress: 1 }
+];
+
+const branchesData = [
+  { el: document.querySelector(".b1"), trigger: 0.38 },
+  { el: document.querySelector(".b2"), trigger: 0.45 },
+  { el: document.querySelector(".b3"), trigger: 0.65 },
+  { el: document.querySelector(".b4"), trigger: 0.65 },
+  { el: document.querySelector(".b5"), trigger: 0.70 }
+];
+
+const starsTraining = document.querySelectorAll(".starTraining"); // ⭐ NUEVO
+
+const tooltip = document.getElementById("tooltip");
+
+// LONGITUD LÍNEA PRINCIPAL
+const length = main.getTotalLength();
+
+main.style.strokeDasharray = length;
+main.style.strokeDashoffset = length;
+
+// PREPARAR RAMAS + POSICIONAR ESTRELLAS
+const triggeredBranches = new Set();
+
+branchesData.forEach((b, i) => {
+  const len = b.el.getTotalLength();
+  b.el.style.strokeDasharray = len;
+  b.el.style.strokeDashoffset = len;
+  b.len = len;
+
+  // ⭐ posicionar estrella al final de la rama
+  if (starsTraining[i]) {
+    const endPoint = b.el.getPointAtLength(len);
+    starsTraining[i].style.transform = `translate(${endPoint.x}px, ${endPoint.y}px)`;
+  }
+});
+
+// ANIMACIÓN PRINCIPAL
+function animateLine() {
+  let currentStep = 0;
+
+  function drawToNext() {
+    if (currentStep >= nodes.length) return;
+
+    const target = length * (1 - nodes[currentStep].progress);
+    let currentOffset = parseFloat(main.style.strokeDashoffset);
+
+    function step() {
+      currentOffset -= 4;
+
+      const progress = 1 - (currentOffset / length);
+
+      // 🔥 DISPARAR RAMAS
+      branchesData.forEach((b, i) => {
+        if (progress >= b.trigger && !triggeredBranches.has(i)) {
+
+          triggeredBranches.add(i);
+
+          let branchOffset = b.len;
+
+          function drawBranch() {
+            branchOffset -= 4;
+
+            if (branchOffset <= 0) {
+              b.el.style.strokeDashoffset = 0;
+
+              // ⭐ mostrar estrella al terminar
+              if (starsTraining[i]) {
+                starsTraining[i].classList.add("show");
+              }
+
+              return;
+            }
+
+            b.el.style.strokeDashoffset = branchOffset;
+            requestAnimationFrame(drawBranch);
+          }
+
+          drawBranch();
+        }
+      });
+
+      // CONTROL DE NODOS
+      if (currentOffset <= target) {
+        main.style.strokeDashoffset = target;
+
+        // VALIDACIÓN: Solo mostrar si el elemento existe (evita el error de n4/null)
+        if (nodes[currentStep] && nodes[currentStep].el) {
+          nodes[currentStep].el.classList.add("show");
+        }
+
+        currentStep++;
+        setTimeout(drawToNext, 400);
+        return;
+      }
+
+      main.style.strokeDashoffset = currentOffset;
+      requestAnimationFrame(step);
+    }
+
+    step();
+  }
+
+  drawToNext();
+}
+
+// TRIGGER SCROLL
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      animateLine();
+      observer.disconnect();
+    }
+  });
+}, { threshold: 0.3 });
+
+observer.observe(section);
+
+// TOOLTIP
+nodes.forEach((node, i) => {
+
+  if (!node.el) return; // Si es el nodo invisible final, no hacer nada
+
+  node.el.addEventListener("mouseenter", () => {
+    tooltip.style.opacity = 1;
+    tooltip.style.visibility = "visible";
+
+    const textos = [
+      "Inicio del camino",
+      "Técnico Electromecanico\n(2015)",
+      "Android Developer\n(2024)",
+      "Analista de Sistemas\n(2026)"
+    ];
+
+    tooltip.innerText = textos[i] || "";
+  });
+
+  node.el.addEventListener("mousemove", (e) => {
+    tooltip.style.left = e.pageX + 15 + "px";
+    tooltip.style.top = e.pageY + 15 + "px";
+  });
+
+  node.el.addEventListener("mouseleave", () => {
+    tooltip.style.opacity = 0;
+    tooltip.style.visibility = "hidden";
+  });
+
+});
+
+// TOOLTIP PARA ESTRELLAS
+starsTraining.forEach((star, i) => {
+
+  if (!star) return;
+
+  // Forzamos que la estrella sea interactiva por código
+  star.setAttribute("pointer-events", "all");
+
+  star.addEventListener("mouseenter", (e) => {
+    console.log("Mouse entró en estrella:", i); // Revisa esto en la consola (F12)
+
+    const textos = [
+      "Reparación de Celulares\n(2016)",
+      "Hidraulica en Fabricacion de Plasticos\n(2019)",
+      "JAVA by Coursera\n(2021)",
+      "HTML/CSS\n(2025)",
+      "JavaScript\n(2025)"
+    ];
+
+    tooltip.innerText = textos[i] || "Información";
+    tooltip.style.opacity = "1";
+    tooltip.style.visibility = "visible"; // Aseguramos visibilidad
+  });
+
+  star.addEventListener("mousemove", (e) => {
+    // El +15 es vital para que el tooltip no quede debajo del puntero
+    // Si el puntero toca el tooltip, se dispara el "mouseleave" de la estrella
+    tooltip.style.left = (e.pageX + 15) + "px";
+    tooltip.style.top = (e.pageY + 15) + "px";
+  });
+
+  star.addEventListener("mouseleave", () => {
+    tooltip.style.opacity = "0";
+    tooltip.style.visibility = "hidden";
+  });
+
+  // CLICK → abrir dialog
+  star.addEventListener("click", () => {
+    dialogContent.innerText = dialogTexts[i] || "";
+    dialog.classList.add("show");
+  });
+
+});

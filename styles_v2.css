@@ -827,3 +827,110 @@ body {
     font-size: 16px;
   }
 }
+
+/* =========================
+    TRAINING TIMELINE
+========================= */
+
+
+.training {
+    padding: 60px 10px;
+    text-align: center;
+}
+
+.training h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+#timeline {
+  position: relative;
+}
+
+/* SVG */
+.map {
+  width: 100%;
+}
+
+/* LÍNEAS */
+.line {
+  fill: none;
+  stroke: #38bdf8;
+  stroke-width: 2.5;
+  pointer-events: none;
+  filter: drop-shadow(0 0 6px #38bdf8);
+}
+
+/* NODOS */
+.node {
+  fill: #38bdf8;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.node.show {
+  opacity: 1;
+}
+
+.node:hover {
+  r: 9;
+  cursor: pointer;
+  filter: drop-shadow(0 0 6px #38bdf8);
+}
+
+/* FLECHAS */
+.arrow {
+  fill: #38bdf8;
+  opacity: 0;
+  transform: scale(0.6);
+  transform-origin: center;
+  transition: all 0.3s ease;
+}
+
+.arrow.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* TOOLTIP */
+.tooltip {
+  position: absolute;
+  background: #0f172a;
+  border: 1px solid #38bdf8;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+  opacity: 0;
+  text-align: center;
+  pointer-events: none;
+  transition: 0.2s;
+  z-index: 1000;
+}
+
+.node.start {
+  r: 7;
+  opacity: 0;
+}
+
+.starTraining {
+  fill: #38bdf8;
+  opacity: 0;
+  transform: scale(0.6);
+  transform-origin: center;
+  transition: opacity 0.3s;
+  pointer-events: all;
+  cursor: pointer;
+
+  stroke: transparent;
+  stroke-width: 12;
+}
+
+.starTraining.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.starTraining:not(.show) {
+  opacity: 0;
+  pointer-events: none; /* Para que no salte el tooltip antes de que aparezca la estrella */
+}
