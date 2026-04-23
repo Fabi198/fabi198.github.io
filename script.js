@@ -180,9 +180,9 @@ const main = document.querySelector(".main");
 
 const nodes = [
   { el: document.querySelector(".start"), progress: 0 },
-  { el: document.querySelector(".n1"), progress: 0.31 },
-  { el: document.querySelector(".n2"), progress: 0.51 },
-  { el: document.querySelector(".n3"), progress: 0.69 },
+  { el: document.querySelector(".n1"), progress: 0.30 },
+  { el: document.querySelector(".n2"), progress: 0.49 },
+  { el: document.querySelector(".n3"), progress: 0.67 },
   { el: null, progress: 1 }
 ];
 
@@ -191,7 +191,8 @@ const branchesData = [
   { el: document.querySelector(".b2"), trigger: 0.45 },
   { el: document.querySelector(".b3"), trigger: 0.65 },
   { el: document.querySelector(".b4"), trigger: 0.65 },
-  { el: document.querySelector(".b5"), trigger: 0.70 }
+  { el: document.querySelector(".b5"), trigger: 0.70 },
+  { el: document.querySelector(".b6"), trigger: 1 }
 ];
 
 const starsTraining = document.querySelectorAll(".starTraining"); // ⭐ NUEVO
@@ -301,14 +302,17 @@ const observer = new IntersectionObserver((entries) => {
 
 observer.observe(section);
 
-// TOOLTIP
+// TOOLTIP NODOS
 nodes.forEach((node, i) => {
 
-  if (!node.el) return; // Si es el nodo invisible final, no hacer nada
+  if (!node.el) return;
 
   node.el.addEventListener("mouseenter", () => {
-    tooltip.style.opacity = 1;
-    tooltip.style.visibility = "visible";
+    if (i != 0) {
+      tooltip.style.opacity = 1;
+      tooltip.style.visibility = "visible";
+    }
+
 
     const textos = [
       "Inicio del camino",
@@ -337,11 +341,10 @@ starsTraining.forEach((star, i) => {
 
   if (!star) return;
 
-  // Forzamos que la estrella sea interactiva por código
   star.setAttribute("pointer-events", "all");
 
   star.addEventListener("mouseenter", (e) => {
-    console.log("Mouse entró en estrella:", i); // Revisa esto en la consola (F12)
+    console.log("Mouse entró en estrella:", i);
 
     const textos = [
       "Reparación de Celulares\n(2016)",
@@ -353,12 +356,10 @@ starsTraining.forEach((star, i) => {
 
     tooltip.innerText = textos[i] || "Información";
     tooltip.style.opacity = "1";
-    tooltip.style.visibility = "visible"; // Aseguramos visibilidad
+    tooltip.style.visibility = "visible";
   });
 
   star.addEventListener("mousemove", (e) => {
-    // El +15 es vital para que el tooltip no quede debajo del puntero
-    // Si el puntero toca el tooltip, se dispara el "mouseleave" de la estrella
     tooltip.style.left = (e.pageX + 15) + "px";
     tooltip.style.top = (e.pageY + 15) + "px";
   });
@@ -368,10 +369,119 @@ starsTraining.forEach((star, i) => {
     tooltip.style.visibility = "hidden";
   });
 
-  // CLICK → abrir dialog
-  star.addEventListener("click", () => {
-    dialogContent.innerText = dialogTexts[i] || "";
-    dialog.classList.add("show");
-  });
+});
 
+
+// ===== DATOS =====
+const nodeData = [
+  {
+    title: "Inicio del camino",
+    year: "(2008 - 2015)",
+    desc: "Primer contacto con la tecnología.",
+    file: "#"
+  },
+  {
+    title: "Técnico Electromecánico",
+    year: "(2008 - 2015)",
+    desc: "Escuela de Educación Técnica N°4 Ing. Emilio Mitre",
+    file: "#"
+  },
+  {
+    title: "Android Developer",
+    year: "(2008 - 2015)",
+    desc: "Desarrollo en Kotlin.",
+    file: "#"
+  },
+  {
+    title: "Analista de Sistemas",
+    year: "(2008 - 2015)",
+    desc: "Carrera en curso.",
+    file: "#"
+  }
+];
+
+const starData = [
+  {
+    title: "Reparación de Celulares",
+    year: "(2008 - 2015)",
+    desc: "Curso técnico.",
+    file: "#"
+  },
+  {
+    title: "Hidráulica",
+    year: "(2008 - 2015)",
+    desc: "Formación industrial.",
+    file: "#"
+  },
+  {
+    title: "Java",
+    year: "(2008 - 2015)",
+    desc: "Curso Coursera.",
+    file: "#"
+  },
+  {
+    title: "HTML/CSS",
+    year: "(2008 - 2015)",
+    desc: "Frontend.",
+    file: "#"
+  },
+  {
+    title: "JavaScript",
+    year: "(2008 - 2015)",
+    desc: "Interactividad web.",
+    file: "#"
+  }
+];
+
+// ===== MODAL =====
+const modal = document.getElementById("eduModal");
+const title = document.getElementById("eduTitle");
+const year = document.getElementById("eduYear");
+const desc = document.getElementById("eduDescription");
+const download = document.getElementById("eduDownload");
+
+function openModal(data) {
+  title.textContent = data.title;
+  year.textContent = data.year;
+  desc.textContent = data.desc;
+  download.href = data.file;
+
+  // ocultar tooltip si está visible
+  tooltip.style.opacity = 0;
+  tooltip.style.visibility = "hidden";
+
+  modal.classList.add("show");
+}
+
+// ===== CLICK NODOS (SIN TOCAR TU HOVER) =====
+nodes.forEach((node, i) => {
+  if (!node.el) return;
+
+  node.el.style.cursor = "pointer";
+
+  node.el.addEventListener("click", () => {
+    openModal(nodeData[i]);
+  });
+});
+
+// ===== CLICK ESTRELLAS =====
+starsTraining.forEach((star, i) => {
+  if (!star) return;
+
+  star.style.cursor = "pointer";
+
+  star.addEventListener("click", () => {
+    openModal(starData[i]);
+  });
+});
+
+// ===== CERRAR =====
+document.querySelector(".edu-close").addEventListener("click", () => {
+  modal.classList.remove("show");
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.remove("show");
+  }
 });

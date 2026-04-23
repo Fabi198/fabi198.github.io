@@ -10,6 +10,29 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
+<div id="eduModal" class="edu-modal">
+  <div class="edu-modal-content">
+
+    <span class="edu-close">&times;</span>
+
+    <h3 id="eduTitle"></h3>
+    <p id="eduYear"></p>
+    <p id="eduDescription"></p>
+
+    <div class="edu-actions">
+      <a id="eduDownload" class="btn-modal" href="#" download>
+        Descargar certificado
+      </a>
+    </div>
+
+    <div class="edu-nav">
+      <button id="eduPrev">←</button>
+      <button id="eduNext">→</button>
+    </div>
+
+  </div>
+</div>
+
 <body>
 
   <canvas id="starfield"></canvas>
@@ -493,14 +516,13 @@
 
     <svg viewBox="0 0 950 450" class="map">
 
-      <!-- NODO INICIAL -->
-      <circle class="node start" cx="50" cy="220" r="6" />
+
 
       <!-- MAIN -->
       <path class="line main" d="M50 220 
          C150 200, 220 280, 300 250
          S500 180, 600 200
-         S800 210, 850 200" />
+         S800 300, 850 200" />
 
       <!-- BRANCHES -->
       <path class="line branch b1" d="M350 231 C360 260, 420 350, 440 350" />
@@ -509,9 +531,17 @@
 
       <path class="line branch b3" d="M500 197 C420 140, 550 90, 550 90" />
 
-      <path class="line branch b4" d="M550 196 C420 240, 650 280, 615 275" />
+      <path class="line branch b4" d="M550 195 C420 240, 650 280, 615 275" />
 
       <path class="line branch b5" d="M539 250 C620 360, 650 280, 700 300" />
+
+      <path class="line branch b6" d="M850 200
+     C834 184, 814 184, 820 200
+     C826 216, 846 216, 850 200
+     C854 184, 874 184, 880 200
+     C886 216, 866 216, 850 200" />
+
+
 
       <!-- NODOS -->
       <circle class="node n1" cx="300" cy="250" r="6" />
