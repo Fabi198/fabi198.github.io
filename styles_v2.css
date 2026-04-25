@@ -849,7 +849,7 @@ body {
 
 /* SVG */
 .map {
-  width: 100%;
+  width: 80%;
 }
 
 /* LÍNEAS */
@@ -935,14 +935,13 @@ body {
   pointer-events: none; /* Para que no salte el tooltip antes de que aparezca la estrella */
 }
 
-/* DIALOG */
+/* =========================
+    DIALOG EDUCATION
+========================= */
 
 .edu-modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: rgba(5, 5, 15, 0.85);
   display: flex;
   align-items: center;
@@ -959,27 +958,104 @@ body {
 }
 
 .edu-modal-content {
-  background: rgba(20, 20, 40, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 18px;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  backdrop-filter: blur(12px);
+  padding: 28px;
+  border-radius: 20px;
   width: 90%;
-  max-width: 420px;
-  color: #fff;
-  text-align: center;
+  max-width: 480px;
+  color: #e2e8f0;
   position: relative;
   box-shadow: 0 0 40px rgba(0,0,0,0.6);
   animation: scaleIn 0.25s ease;
 }
 
+/* CLOSE */
 .edu-close {
   position: absolute;
-  top: 15px;
-  right: 18px;
-  font-size: 20px;
+  top: 18px;
+  right: 20px;
+  font-size: 18px;
+  color: #94a3b8;
   cursor: pointer;
 }
 
+/* HEADER */
+.edu-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.edu-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #60a5fa, #2563eb);
+}
+
+.edu-subtitle {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #64748b;
+}
+
+.edu-title-group h2 {
+  margin: 2px 0;
+}
+
+.edu-year {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+/* DESCRIPTION */
+.edu-description {
+  margin: 18px 0;
+  color: #94a3b8;
+}
+
+/* GRID */
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.edu-card {
+  background: rgba(255,255,255,0.05);
+  padding: 14px;
+  border-radius: 12px;
+}
+
+.edu-card span {
+  font-size: 11px;
+  color: #64748b;
+}
+
+.edu-card strong {
+  display: block;
+  margin-top: 4px;
+}
+
+/* ACTION */
+.edu-actions {
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-modal {
+  display: inline-block;
+  background: #0ea5e9;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* NAV */
 .edu-nav {
   display: flex;
   justify-content: space-between;
@@ -987,7 +1063,7 @@ body {
 }
 
 .edu-nav button {
-  background: #222;
+  background: rgba(255,255,255,0.08);
   border: none;
   color: #fff;
   padding: 8px 14px;
@@ -996,15 +1072,10 @@ body {
 }
 
 .edu-nav button:hover {
-  background: #444;
+  background: rgba(255,255,255,0.2);
 }
 
-.node.active,
-.starTraining.active {
-  filter: drop-shadow(0 0 6px #00c3ff);
-  transform: scale(1.2);
-}
-
+/* ANIM */
 @keyframes scaleIn {
   from { transform: scale(0.85); opacity: 0; }
   to { transform: scale(1); opacity: 1; }

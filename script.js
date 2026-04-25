@@ -182,7 +182,7 @@ const nodes = [
   { el: document.querySelector(".start"), progress: 0 },
   { el: document.querySelector(".n1"), progress: 0.30 },
   { el: document.querySelector(".n2"), progress: 0.49 },
-  { el: document.querySelector(".n3"), progress: 0.67 },
+  { el: document.querySelector(".n3"), progress: 0.85 },
   { el: null, progress: 1 }
 ];
 
@@ -191,7 +191,7 @@ const branchesData = [
   { el: document.querySelector(".b2"), trigger: 0.45 },
   { el: document.querySelector(".b3"), trigger: 0.65 },
   { el: document.querySelector(".b4"), trigger: 0.65 },
-  { el: document.querySelector(".b5"), trigger: 0.70 },
+  { el: document.querySelector(".b5"), trigger: 0.74 },
   { el: document.querySelector(".b6"), trigger: 1 }
 ];
 
@@ -347,8 +347,8 @@ starsTraining.forEach((star, i) => {
     console.log("Mouse entró en estrella:", i);
 
     const textos = [
-      "Reparación de Celulares\n(2016)",
       "Hidraulica en Fabricacion de Plasticos\n(2019)",
+      "Reparación de Celulares\n(2016)",
       "JAVA by Coursera\n(2021)",
       "HTML/CSS\n(2025)",
       "JavaScript\n(2025)"
@@ -378,58 +378,76 @@ const nodeData = [
     title: "Inicio del camino",
     year: "(2008 - 2015)",
     desc: "Primer contacto con la tecnología.",
+    place: "",
+    mode: "",
     file: "#"
   },
   {
     title: "Técnico Electromecánico",
     year: "(2008 - 2015)",
-    desc: "Escuela de Educación Técnica N°4 Ing. Emilio Mitre",
+    desc: "Secundario técnico completo con titulo de electromecánico.",
+    place: "E.E.S.T. N°4 Ing. Emilio Mitre",
+    mode: "Presencial",
     file: "#"
   },
   {
     title: "Android Developer",
-    year: "(2008 - 2015)",
-    desc: "Desarrollo en Kotlin.",
-    file: "#"
+    year: "(2022 - 2024)",
+    desc: "Desarrollo de apps para Android en Java y Kotlin con Android Studio. Ademas de conocimientos en GIT, Google Analytics, y metodologia Scrum",
+    place: "Educación IT",
+    mode: "Distancia (168hs)",
+    file: "/assets/certificates/Certificado-Desarrollador-Android.pdf"
   },
   {
-    title: "Analista de Sistemas",
-    year: "(2008 - 2015)",
-    desc: "Carrera en curso.",
+    title: "Técnico Superior en Análisis de Sistemas",
+    year: "(2025 - 2026)",
+    desc: "Desarrollo y mantenimiento de programas en lenguajes avanzados, y liderazgo de proyectos de análisis y programación",
+    place: "Instituto de Estudios Superiores de Buenos Aires (ESBA)",
+    mode: "Presencial",
     file: "#"
   }
 ];
 
 const starData = [
   {
-    title: "Reparación de Celulares",
-    year: "(2008 - 2015)",
-    desc: "Curso técnico.",
+    title: "Neumatica e Hidraulica en la Industria Plastica",
+    year: "(2019)",
+    desc: "Formación industrial en el campo de la industria plastica, aplicando maquinaria alimentada con neumatica o hidraulica.",
+    place: "Centro de Formación Profesional N°30",
+    mode: "Presencial",
     file: "#"
   },
   {
-    title: "Hidráulica",
-    year: "(2008 - 2015)",
-    desc: "Formación industrial.",
+    title: "Técnico en reparación de Celulares",
+    year: "(2015)",
+    desc: "Arme y desarme de dispositivos electronicos, ademas de flasheos y reparaciones de Sistemas Operativos en moviles.",
+    place: "Instituto Centro de Enseñanza en Tecnologia y Oficio (CETO)",
+    mode: "Presencial",
     file: "#"
   },
   {
-    title: "Java",
-    year: "(2008 - 2015)",
-    desc: "Curso Coursera.",
+    title: "Informática: Programar con un propósito",
+    year: "(2023)",
+    desc: "Curso dictado por Coursera, avalado por la Universidad de Princeton, y enseñado por Robert Sedgewick y Kevin Wayne.",
+    place: "Coursera",
+    mode: "Distancia (150hs)",
     file: "#"
   },
   {
-    title: "HTML/CSS",
-    year: "(2008 - 2015)",
-    desc: "Frontend.",
-    file: "#"
+    title: "Diseño Web con HTML5/CSS",
+    year: "(2024)",
+    desc: "Curso de diseño web con HTML y CSS",
+    place: "Conecta Empleo",
+    mode: "Distancia (30hs)",
+    file: "/assets/certificates/FT AR HTML - Certificado.pdf"
   },
   {
     title: "JavaScript",
-    year: "(2008 - 2015)",
-    desc: "Interactividad web.",
-    file: "#"
+    year: "(2024)",
+    desc: "Fundamentos basicos de JS",
+    place: "Conecta Empleo",
+    mode: "Distancia (30hs)",
+    file: "/assets/certificates/FT AR JavaScript - Certificado.pdf"
   }
 ];
 
@@ -438,12 +456,16 @@ const modal = document.getElementById("eduModal");
 const title = document.getElementById("eduTitle");
 const year = document.getElementById("eduYear");
 const desc = document.getElementById("eduDescription");
+const place = document.getElementById("eduPlace");
+const mode = document.getElementById("eduMode");
 const download = document.getElementById("eduDownload");
 
 function openModal(data) {
   title.textContent = data.title;
   year.textContent = data.year;
   desc.textContent = data.desc;
+  place.textContent = data.place;
+  mode.textContent = data.mode;
   download.href = data.file;
 
   // ocultar tooltip si está visible
