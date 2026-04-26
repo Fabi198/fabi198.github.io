@@ -180,19 +180,21 @@ const main = document.querySelector(".main");
 
 const nodes = [
   { el: document.querySelector(".start"), progress: 0 },
-  { el: document.querySelector(".n1"), progress: 0.30 },
-  { el: document.querySelector(".n2"), progress: 0.49 },
-  { el: document.querySelector(".n3"), progress: 0.85 },
+  { el: document.querySelector(".n1"), progress: 0.21 },
+  { el: document.querySelector(".n2"), progress: 0.43 },
+  { el: document.querySelector(".n3"), progress: 0.84 },
   { el: null, progress: 1 }
 ];
 
 const branchesData = [
-  { el: document.querySelector(".b1"), trigger: 0.38 },
-  { el: document.querySelector(".b2"), trigger: 0.45 },
-  { el: document.querySelector(".b3"), trigger: 0.65 },
-  { el: document.querySelector(".b4"), trigger: 0.65 },
-  { el: document.querySelector(".b5"), trigger: 0.74 },
-  { el: document.querySelector(".b6"), trigger: 1 }
+  { el: document.querySelector(".b1"), trigger: 0.30 },
+  { el: document.querySelector(".b2"), trigger: 0.36 },
+  { el: document.querySelector(".b3"), trigger: 0.50 },
+  { el: document.querySelector(".b4"), trigger: 0.56 },
+  { el: document.querySelector(".b5"), trigger: 0.60 },
+  { el: document.querySelector(".b6"), trigger: 1 },
+  { el: document.querySelector(".b7"), trigger: 0.01 },
+  { el: document.querySelector(".b8"), trigger: 0.01 }
 ];
 
 const starsTraining = document.querySelectorAll(".starTraining"); // ⭐ NUEVO
@@ -349,9 +351,9 @@ starsTraining.forEach((star, i) => {
     const textos = [
       "Hidraulica en Fabricacion de Plasticos\n(2019)",
       "Reparación de Celulares\n(2016)",
-      "JAVA by Coursera\n(2021)",
-      "HTML/CSS\n(2025)",
-      "JavaScript\n(2025)"
+      "JAVA by Coursera\n(2023)",
+      "HTML/CSS\n(2024)",
+      "JavaScript\n(2024)"
     ];
 
     tooltip.innerText = textos[i] || "Información";
@@ -426,9 +428,9 @@ const starData = [
     file: "#"
   },
   {
-    title: "Informática: Programar con un propósito",
+    title: "Computer Science: Programming with a Purpose",
     year: "(2023)",
-    desc: "Curso dictado por Coursera, avalado por la Universidad de Princeton, y enseñado por Robert Sedgewick y Kevin Wayne.",
+    desc: "Curso dictado por Coursera, %100 en ingles, avalado por la Universidad de Princeton, y enseñado por Robert Sedgewick y Kevin Wayne.",
     place: "Coursera",
     mode: "Distancia (150hs)",
     file: "#"
