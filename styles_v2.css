@@ -1080,3 +1080,113 @@ body {
   from { transform: scale(0.85); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+
+
+
+
+/* =========================
+    SOBRE MI
+========================= */
+
+.sobre {
+  padding: 10px 10px;
+}
+
+.sobre-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* TOP */
+
+.sobre-top {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.sobre-img img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #4da3ff;
+}
+
+.sobre-text-top {
+  font-size: 15px;
+  line-height: 1.7;
+  opacity: 0.9;
+  margin-left: 30px;
+}
+
+/* BOTTOM */
+
+.sobre-bottom {
+  display: flex;
+  gap: 40px;
+}
+
+.sobre-left {
+  flex: 1;
+  border-left: 2px solid rgba(255,255,255,0.2);
+  padding-left: 20px;
+  font-size: 15px;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.sobre-card {
+  flex: 1;
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(6px);
+  background: rgba(255,255,255,0.05);
+  padding: 14px;
+  border-radius: 12px;
+}
+
+.quote-container {
+  max-width: 370px;
+  opacity: 0.8;
+  font-family: Arial, sans-serif;
+}
+
+.frase p {
+  font-style: italic;
+}
+
+.frase cite {
+  display: block;
+  text-align: right;
+  font-size: 11px;
+  font-style: italic;
+}
+
+.sobre-card h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.sobre-card .final {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .sobre-top {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-bottom {
+    flex-direction: column;
+  }
+
+  .sobre-left {
+    border-left: none;
+    padding-left: 0;
+  }
+}

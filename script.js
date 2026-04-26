@@ -174,6 +174,8 @@ document.addEventListener("keydown", (e) => {
 
 });
 
+let currentTimelineIndex = 0;
+
 const section = document.querySelector("#training");
 
 const main = document.querySelector(".main");
@@ -453,6 +455,59 @@ const starData = [
   }
 ];
 
+const timelineData = [
+  {
+    type: "node",
+    ref: nodes[1],
+    data: nodeData[1]
+  },
+  {
+    type: "star",
+    ref: starsTraining[1],
+    data: starData[1]
+  },
+  {
+    type: "star",
+    ref: starsTraining[0],
+    data: starData[0]
+  },
+  {
+    type: "node",
+    ref: nodes[2],
+    data: nodeData[2]
+  },
+  {
+    type: "star",
+    ref: starsTraining[2],
+    data: starData[2]
+  },
+  {
+    type: "star",
+    ref: starsTraining[3],
+    data: starData[3]
+  },
+  {
+    type: "star",
+    ref: starsTraining[4],
+    data: starData[4]
+  },
+  {
+    type: "node",
+    ref: nodes[3],
+    data: nodeData[3]
+  }
+];
+
+timelineData.forEach((item, i) => {
+  if (item.type === "node" && item.ref?.el) {
+    item.ref.el.dataset.timelineIndex = i;
+  }
+
+  if (item.type === "star" && item.ref) {
+    item.ref.dataset.timelineIndex = i;
+  }
+});
+
 // ===== MODAL =====
 const modal = document.getElementById("eduModal");
 const title = document.getElementById("eduTitle");
@@ -462,7 +517,13 @@ const place = document.getElementById("eduPlace");
 const mode = document.getElementById("eduMode");
 const download = document.getElementById("eduDownload");
 
-function openModal(data) {
+function openModal(index) {
+
+  currentTimelineIndex = index;
+
+  const item = timelineData[index];
+  const data = item.data;
+
   title.textContent = data.title;
   year.textContent = data.year;
   desc.textContent = data.desc;
@@ -483,8 +544,9 @@ nodes.forEach((node, i) => {
 
   node.el.style.cursor = "pointer";
 
-  node.el.addEventListener("click", () => {
-    openModal(nodeData[i]);
+  node.el.addEventListener("click", (e) => {
+    const index = parseInt(e.currentTarget.dataset.timelineIndex);
+    openModal(index);
   });
 });
 
@@ -494,9 +556,28 @@ starsTraining.forEach((star, i) => {
 
   star.style.cursor = "pointer";
 
-  star.addEventListener("click", () => {
-    openModal(starData[i]);
+  star.addEventListener("click", (e) => {
+    const index = parseInt(e.currentTarget.dataset.timelineIndex);
+    openModal(index);
   });
+});
+
+document.getElementById("eduNext").addEventListener("click", () => {
+
+console.log("TIMELINE INDEX", currentTimelineIndex);
+console.count("CLICK NEXT");
+
+  currentTimelineIndex =
+    (currentTimelineIndex + 1) % timelineData.length;
+
+  openModal(currentTimelineIndex);
+});
+
+document.getElementById("eduPrev").addEventListener("click", () => {
+  currentTimelineIndex =
+    (currentTimelineIndex - 1 + timelineData.length) % timelineData.length;
+
+  openModal(currentTimelineIndex);
 });
 
 // ===== CERRAR =====
