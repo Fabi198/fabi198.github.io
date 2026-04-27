@@ -352,7 +352,7 @@ starsTraining.forEach((star, i) => {
 
     const textos = [
       "Hidraulica en Fabricacion de Plasticos\n(2019)",
-      "Reparación de Celulares\n(2016)",
+      "Reparación de Celulares\n(2015)",
       "JAVA by Coursera\n(2023)",
       "HTML/CSS\n(2024)",
       "JavaScript\n(2024)"
