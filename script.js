@@ -564,8 +564,8 @@ starsTraining.forEach((star, i) => {
 
 document.getElementById("eduNext").addEventListener("click", () => {
 
-console.log("TIMELINE INDEX", currentTimelineIndex);
-console.count("CLICK NEXT");
+  console.log("TIMELINE INDEX", currentTimelineIndex);
+  console.count("CLICK NEXT");
 
   currentTimelineIndex =
     (currentTimelineIndex + 1) % timelineData.length;

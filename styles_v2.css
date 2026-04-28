@@ -1224,6 +1224,166 @@ body {
     font-weight: bold;
 }
 
+/* =========================
+    WORK TIMELINE
+========================= */
+
+.timeline_work {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.timeline_work h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.timeline_work h2::after {
+    content: "";
+    width: 80px;
+    height: 2px;
+    background: #38bdf8;
+    display: block;
+    margin: 10px auto 0;
+}
+
+/* CONTENEDOR */
+.timeline_work-container {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* LÍNEA CENTRAL */
+.timeline_work-container::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: rgba(56, 189, 248, 0.25);
+    transform: translateX(-50%);
+}
+
+/* CARDS */
+.timeline_work-card {
+    width: 50%;
+    padding: 18px;
+    margin: 40px 0;
+    position: relative;
+    background: linear-gradient(135deg, #0f172a, #020617);
+    backdrop-filter: blur(12px);
+    color: #e2e8f0;
+    position: relative;
+    box-shadow: 0 0 10px rgba(230, 229, 229, 0.4);
+    animation: scaleIn 0.25s ease;
+    border-radius: 12px;
+}
+
+/* POSICIONES */
+.timeline_work-card.left {
+    left: -9%;
+}
+
+.timeline_work-card.right {
+    left: 55%;
+}
+
+/* CONECTOR (puntito) */
+.timeline_work-card::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    width: 10px;
+    height: 10px;
+    background: #38bdf8;
+    border-radius: 50%;
+}
+
+/* AJUSTE LADO */
+.timeline_work-card.left::before {
+    right: -26px;
+}
+
+.timeline_work-card.right::before {
+    left: -26px;
+}
+
+.timeline_work-card .logo-title {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    gap: 10px;
+    margin-left: 72px;
+    background: rgba(8, 8, 8, 0.308);
+    padding: 12px;
+    border-radius: 12px;
+    border-color: #030a18;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.1),
+        /* luz arriba */
+        0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.logo-title img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+/* TEXTO (solo si no lo tenés ya definido) */
+.logo-title h3 {
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 18px;
+    align-items: center;
+    margin: 0;
+}
+
+
+
+.timeline_work-card .meta {
+    font-size: 12px;
+    color: #94a3b8;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.timeline_work-card p {
+    font-size: 13px;
+    color: #cbd5f5;
+    text-align: left;
+}
+
+.timeline_work-card ul {
+    padding-left: 18px;
+    margin: 10px 0;
+}
+
+.timeline_work-card li {
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+.timeline_work-tags span{
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 3px 15px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    margin: 5px;
+    color: #00a8cc;
+    justify-content: center;
+}
+
+.timeline_work-tags {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+}
+
 /* RESPONSIVE */
 
 @media (max-width: 900px) {
