@@ -1531,9 +1531,7 @@ body {
         font-size: 0.9rem;
         padding: 0 10px;
     }
-}
 
-@media (max-width: 600px) {
     .overlayPrivate .modalPrivate {
         width: 85%;
         padding: 15px;
@@ -1543,26 +1541,37 @@ body {
 
 @media (max-width: 768px) {
 
-    .timeline_work-container::before {
-        left: 20px;
+    /* NAV */
+    .nav-links {
+        display: none;
     }
 
-    .timeline_work-card {
-        width: 100%;
-        left: 0 !important;
-        margin-left: 40px;
+    /* GRID */
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin: 0 15px;
     }
 
-    .timeline_work-card::before {
-        left: -26px;
+    /* PROJECTS */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
     }
 
-    .timeline_work-tags {
+    .portfolio-container {
+        width: 90%;
+    }
+
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .project-gallery .right {
         grid-template-columns: repeat(2, 1fr);
     }
-}
 
-@media (max-width: 768px) {
+    /* SOBRE */
     .sobre-top {
         flex-direction: column;
         text-align: center;
@@ -1581,37 +1590,36 @@ body {
         width: 100%;
         text-align: center;
     }
-}
 
-@media (max-width: 768px) {
-    .grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
-        margin: 0 15px;
-    }
-}
-
-@media (max-width: 768px) {
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
+    /* TIMELINE */
+    .timeline_work-container::before {
+        left: 20px;
     }
 
-    .portfolio-container {
-        width: 90%;
+    .timeline_work-card {
+        width: 100%;
+        left: 0 !important;
+        margin-left: 40px;
     }
 
-    .project-gallery {
-        grid-template-columns: 1fr;
+    .timeline_work-card::before {
+        left: -26px;
     }
 
-    .project-gallery .right {
+    .timeline_work-tags {
         grid-template-columns: repeat(2, 1fr);
     }
-}
 
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
+    /* EDUCATION SVG FIX */
+    .line {
+        animation: none !important;
+        stroke-dasharray: none !important;
+        stroke-dashoffset: 0 !important;
+    }
+
+    .node,
+    .starTraining {
+        opacity: 1 !important;
+        transform: scale(1) !important;
     }
 }
