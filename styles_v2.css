@@ -1435,67 +1435,67 @@ body {
 
 
 .contact-section {
-  padding: 60px 20px;
-  text-align: center;
+    padding: 60px 20px;
+    text-align: center;
 }
 
 .contact-container {
-  max-width: 700px;
-  margin: auto;
+    max-width: 700px;
+    margin: auto;
 }
 
 .contact-info p {
-  margin: 6px 0;
-  color: #94a3b8;
+    margin: 6px 0;
+    color: #94a3b8;
 }
 
 .contact-actions {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .btn-contact {
-  border: 1px solid #38bdf8;
-  padding: 10px 18px;
-  border-radius: 8px;
-  color: #38bdf8;
-  text-decoration: none;
-  transition: 0.3s;
+    border: 1px solid #38bdf8;
+    padding: 10px 18px;
+    border-radius: 8px;
+    color: #38bdf8;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
 .btn-contact:hover {
-  background: #38bdf8;
-  color: black;
+    background: #38bdf8;
+    color: black;
 }
 
 /* variantes */
 .btn-contact.github {
-  border-color: #ccc;
-  color: #ccc;
+    border-color: #ccc;
+    color: #ccc;
 }
 
 .btn-contact.github:hover {
-  background: #ccc;
-  color: black;
+    background: #ccc;
+    color: black;
 }
 
 .btn-contact.linkedin {
-  border-color: #0a66c2;
-  color: #0a66c2;
+    border-color: #0a66c2;
+    color: #0a66c2;
 }
 
 .btn-contact.linkedin:hover {
-  background: #0a66c2;
-  color: white;
+    background: #0a66c2;
+    color: white;
 }
 
 .contact-footer {
-  margin-top: 30px;
-  font-size: 12px;
-  color: #64748b;
+    margin-top: 30px;
+    font-size: 12px;
+    color: #64748b;
 }
 
 
@@ -1538,20 +1538,23 @@ body {
         text-align: center;
     }
 
-        .edu-modal {
+    .edu-modal {
         align-items: flex-start;
         padding: 20px 10px;
     }
 
     .edu-modal-content {
-        width: 100%;
-        max-width: 100%;
-        padding: 18px;
+        width: 95%;
+        padding: 14px;
 
-        max-height: 90vh;
+        max-height: 85vh;
         overflow-y: auto;
 
-        border-radius: 14px;
+        font-size: 14px;
+    }
+
+    .edu-description {
+        font-size: 13px;
     }
 
     .edu-header {
@@ -1559,12 +1562,16 @@ body {
     }
 
     .edu-icon {
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
     }
 
     .edu-title-group h2 {
-        font-size: 16px;
+        font-size: 15px;
+    }
+
+    .edu-subtitle {
+        font-size: 10px;
     }
 
     .edu-grid {
@@ -1644,7 +1651,24 @@ body {
     .timeline_work-card {
         width: 100%;
         left: 0 !important;
-        margin-left: 40px;
+        margin-left: 25px;
+    }
+
+    .timeline_work-card p {
+        font-size: 12px;
+    }
+
+    .timeline_work-card .meta {
+        font-size: 11px;
+    }
+
+    .logo-title h3 {
+        font-size: 14px;
+    }
+
+    .timeline_work-tags span {
+        font-size: 0.6rem;
+        padding: 2px 8px;
     }
 
     .timeline_work-card::before {
@@ -1662,7 +1686,11 @@ body {
         stroke-dashoffset: 0 !important;
     }
 
-    .node,
+    .node {
+        opacity: 1 !important;
+        transform: scale(1) !important;
+    }
+
     .starTraining {
         opacity: 1 !important;
         transform: scale(1) !important;
