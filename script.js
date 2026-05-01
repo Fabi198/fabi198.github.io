@@ -590,3 +590,32 @@ window.addEventListener("click", (e) => {
     modal.classList.remove("show");
   }
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const overlayPrivate = document.getElementById("overlayPrivate");
+  const closePrivate = overlayPrivate.querySelector(".closePrivate");
+
+  function openPrivateModal() {
+    overlayPrivate.classList.add("active");
+  }
+
+  closePrivate.addEventListener("click", () => {
+    overlayPrivate.classList.remove("active");
+  });
+
+  overlayPrivate.addEventListener("click", (e) => {
+    if (e.target === overlayPrivate) {
+      overlayPrivate.classList.remove("active");
+    }
+  });
+
+  document.querySelectorAll(".btnPrivate").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openPrivateModal();
+    });
+  });
+
+});
