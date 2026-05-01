@@ -1498,6 +1498,26 @@ body {
     color: #64748b;
 }
 
+.infotraining {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.infonodes,
+.infostars {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nodeinfo,
+.starinfo {
+    fill: #38bdf8;
+    transition: opacity 0.5s ease;
+}
+
 
 
 /* RESPONSIVE */
@@ -1516,6 +1536,22 @@ body {
         border-left: none;
         padding-left: 0;
     }
+
+    .map {
+        width: 100%;
+    }
+
+    .infonodes p,
+    .infostars p {
+        font-size: 10px;
+    }
+
+    .close {
+        top: 15px;
+        right: 15px;
+        font-size: 2.5rem;
+    }
+
 }
 
 @media (max-width: 600px) {
@@ -1532,6 +1568,15 @@ body {
         padding: 0 10px;
     }
 
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .contact-container {
+        margin-bottom: 8px;
+    }
+
     .overlayPrivate .modalPrivate {
         width: 85%;
         padding: 15px;
@@ -1544,9 +1589,9 @@ body {
     }
 
     .edu-modal-content {
-        width: 95%;
+        width: 80%;
         padding: 14px;
-
+        margin-top: 50px;
         max-height: 85vh;
         overflow-y: auto;
 
@@ -1615,10 +1660,6 @@ body {
         width: 90%;
     }
 
-    .project-gallery {
-        grid-template-columns: 1fr;
-    }
-
     .project-gallery .right {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1639,17 +1680,17 @@ body {
     }
 
     .sobre-card {
-        width: 100%;
+        width: 70%;
         text-align: center;
     }
 
     /* TIMELINE */
     .timeline_work-container::before {
-        left: 20px;
+        opacity: 0;
     }
 
     .timeline_work-card {
-        width: 100%;
+        width: 80%;
         left: 0 !important;
         margin-left: 25px;
     }
@@ -1679,20 +1720,5 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* EDUCATION SVG FIX */
-    .line {
-        animation: none !important;
-        stroke-dasharray: none !important;
-        stroke-dashoffset: 0 !important;
-    }
 
-    .node {
-        opacity: 1 !important;
-        transform: scale(1) !important;
-    }
-
-    .starTraining {
-        opacity: 1 !important;
-        transform: scale(1) !important;
-    }
 }
