@@ -1537,6 +1537,51 @@ body {
         padding: 15px;
         text-align: center;
     }
+
+        .edu-modal {
+        align-items: flex-start;
+        padding: 20px 10px;
+    }
+
+    .edu-modal-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 18px;
+
+        max-height: 90vh;
+        overflow-y: auto;
+
+        border-radius: 14px;
+    }
+
+    .edu-header {
+        gap: 10px;
+    }
+
+    .edu-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .edu-title-group h2 {
+        font-size: 16px;
+    }
+
+    .edu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .edu-actions {
+        justify-content: center;
+    }
+
+    .edu-nav {
+        gap: 10px;
+    }
+
+    .edu-nav button {
+        flex: 1;
+    }
 }
 
 @media (max-width: 768px) {
