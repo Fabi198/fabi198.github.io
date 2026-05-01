@@ -1517,3 +1517,101 @@ body {
         padding-left: 0;
     }
 }
+
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 1rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .overlayPrivate .modalPrivate {
+        width: 85%;
+        padding: 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .timeline_work-container::before {
+        left: 20px;
+    }
+
+    .timeline_work-card {
+        width: 100%;
+        left: 0 !important;
+        margin-left: 40px;
+    }
+
+    .timeline_work-card::before {
+        left: -26px;
+    }
+
+    .timeline_work-tags {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .sobre-top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sobre-text-top {
+        margin-left: 0;
+    }
+
+    .sobre-bottom {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .sobre-card {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin: 0 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .portfolio-container {
+        width: 90%;
+    }
+
+    .project-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .project-gallery .right {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+}
