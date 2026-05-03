@@ -619,3 +619,36 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+const videoModal = document.getElementById("videoModal");
+const videoFrame = document.getElementById("videoFrame");
+
+// abrir video
+document.querySelectorAll(".btn-demo").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const videoId = btn.getAttribute("data-video");
+
+        videoFrame.setAttribute(
+            "src",
+            `https://www.youtube.com/embed/${videoId}?autoplay=1`
+        );
+
+        videoModal.classList.add("show");
+    });
+});
+
+// cerrar con X
+document.querySelector(".close-video").addEventListener("click", () => {
+    videoModal.classList.remove("show");
+    videoFrame.removeAttribute("src");
+});
+
+// cerrar clickeando fondo
+videoModal.addEventListener("click", (e) => {
+    if (e.target === videoModal) {
+        videoModal.classList.remove("show");
+        videoFrame.removeAttribute("src");
+    }
+});
