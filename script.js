@@ -392,7 +392,7 @@ const nodeData = [
     desc: "Secundario técnico completo con titulo de electromecánico.",
     place: "E.E.S.T. N°4 Ing. Emilio Mitre",
     mode: "Presencial",
-    file: "#"
+    file: "/assets/certificates/Diploma Secundaria.pdf"
   },
   {
     title: "Android Developer",
@@ -418,7 +418,7 @@ const starData = [
     year: "(2019)",
     desc: "Formación industrial en el campo de la industria plastica, aplicando maquinaria alimentada con neumatica o hidraulica.",
     place: "Centro de Formación Profesional N°30",
-    mode: "Presencial",
+    mode: "Presencial (40hs)",
     file: "#"
   },
   {
@@ -426,8 +426,8 @@ const starData = [
     year: "(2015)",
     desc: "Arme y desarme de dispositivos electronicos, ademas de flasheos y reparaciones de Sistemas Operativos en moviles.",
     place: "Instituto Centro de Enseñanza en Tecnologia y Oficio (CETO)",
-    mode: "Presencial",
-    file: "#"
+    mode: "Presencial (60hs)",
+    file: "/assets/certificates/Diploma Reparacion Celulares.pdf"
   },
   {
     title: "Computer Science: Programming with a Purpose",
