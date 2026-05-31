@@ -422,6 +422,35 @@ body {
     transform: scale(1.05);
 }
 
+.project-gallery-dotnet {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px;
+    margin: 15px;
+}
+
+.project-gallery-dotnet img:first-child {
+    grid-column: span 2; 
+    height: 200px;
+    border-radius: 20px;
+}
+
+.project-gallery-dotnet img {
+    width: 100%;
+    height: 140px;
+    object-fit: fill;
+    transition: transform 0.3s ease;
+}
+
+.project-gallery-dotnet img:not(:first-child) {
+    border-radius: 10px;
+}
+
+.project-gallery-dotnet img:hover {
+    transform: scale(1.03);
+}
+
+
 /* =========================
    TAGS & BUTTONS
 ========================= */

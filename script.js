@@ -78,11 +78,11 @@ let currentImages = [];
 let currentIndex = 0;
 
 // click en cualquier imagen
-console.log(document.querySelectorAll(".project-gallery img"));
-document.querySelectorAll(".project-gallery img").forEach((img) => {
+console.log(document.querySelectorAll(".project-gallery img, .project-gallery-dotnet img"));
+document.querySelectorAll(".project-gallery img, .project-gallery-dotnet img").forEach((img) => {
   img.addEventListener("click", () => {
     console.log("CLICK DETECTADO");
-    const gallery = img.closest(".project-gallery");
+    const gallery = img.closest(".project-gallery, .project-gallery-dotnet");
 
     // agarrar lista completa
     currentImages = JSON.parse(gallery.dataset.gallery);
